@@ -1,7 +1,7 @@
 ----------------------------
 -----------user(用户表)
 ---------------------------
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `proceeds` (
   `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '用户名',
   `age` int(20) DEFAULT NULL COMMENT '年龄',

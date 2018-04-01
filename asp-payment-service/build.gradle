@@ -21,13 +21,16 @@ sourceCompatibility = 1.8
 repositories {
 	mavenCentral()
 }
-
 ext {
-	EncodeVersion='4.11'
+
 }
 
 dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile project(":asp-proceeds-service")
-	compile project(":asp-payment-service")
+	//校验
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	//事物注解
+	compile ('org.springframework:spring-tx:4.3.10.RELEASE')
+	//依赖common 根据具体情况选择依赖开始通过maven私服依赖
+	compile project(":common")
 }
