@@ -1,4 +1,5 @@
 rootProject.name = 'form-manager'
 include 'asp-web'
 include 'asp-proceeds-service'
+include 'asp-payment-service'
 include 'common'

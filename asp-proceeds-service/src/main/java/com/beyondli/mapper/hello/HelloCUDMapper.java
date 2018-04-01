@@ -10,6 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * Desc .
  */
 public interface HelloCUDMapper {
-    @Insert("INSERT INTO user (name, age) VALUES (#{name}, #{age})")
+    @Insert("INSERT INTO proceeds (name, age) VALUES (#{name}, #{age})")
     void addUser(UserEntity userEntity);
 }
