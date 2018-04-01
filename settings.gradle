@@ -1,0 +1,4 @@
+rootProject.name = 'form-manager'
+include 'asp-web'
+include 'asp-proceeds-service'
+include 'common'
