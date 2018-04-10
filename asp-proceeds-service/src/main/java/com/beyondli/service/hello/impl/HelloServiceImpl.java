@@ -31,6 +31,7 @@ public class HelloServiceImpl implements HelloService {
     @Transactional(rollbackFor = Exception.class)
     public void addUser(User user) {
         UserEntity userEntity = MapperUtils.mapperBean(user, UserEntity.class);
+        userEntity.setId(1);
         helloCUDMapper.addUser(userEntity);
     }
 }
