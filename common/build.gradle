@@ -62,4 +62,6 @@ dependencies {
 	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}")
 	compile("com.alibaba:druid:$druidVersion")
 	compile("com.github.pagehelper:pagehelper:${pagehelperVersion}")
+	//读取本地jar
+	compile(files("./src/main/resources/lib/ojdbc6-11.2.0.1.0.jar"))
 }

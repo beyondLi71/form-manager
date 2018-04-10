@@ -32,4 +32,5 @@ dependencies {
 	compile project(":asp-payment-service")
 	compile project(":asp-fundsmanager-service")
     compile project(":asp-cost-service")
+	//compile(files("./src/main/resources/lib/ojdbc6-11.2.0.1.0.jar"))
 }
