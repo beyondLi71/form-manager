@@ -27,7 +27,6 @@ ext {
 }
 
 dependencies {
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile project(":asp-proceeds-service")
 	compile project(":asp-payment-service")
 }
