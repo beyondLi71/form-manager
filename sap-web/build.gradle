@@ -27,6 +27,6 @@ ext {
 }
 
 dependencies {
-	compile project(":asp-proceeds-service")
-	compile project(":asp-payment-service")
+	compile project(":sap-proceeds-service")
+	compile project(":sap-payment-service")
 }

@@ -8,5 +8,5 @@ import org.springframework.context.annotation.Configuration;
  * Desc .
  */
 @Configuration
-public class AspCommonConfiguration {
+public class SapCommonConfiguration {
 }
