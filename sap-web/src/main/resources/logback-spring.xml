@@ -14,9 +14,9 @@
             value="[%d{yyyy-MM-dd HH:mm:ss.SSS} ${ip} ${appName} %highlight(%-5level) %yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId}) %yellow(%thread) %green(%logger) %msg%n"/>
 
   <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${LOG_PATH}/${appName}/${appName}-error.log</file>
+    <file>../${LOG_PATH}/${appName}/${appName}-error.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_PATH}/${appName}/${appName}-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-error-%d{yyyy-MM-dd}.log</fileNamePattern>
       <!--只保留30天-->
       <maxHistory>30</maxHistory>
       <!--1GB-->
@@ -38,9 +38,9 @@
   </appender>
 
   <appender name="FILEWARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${LOG_PATH}/${appName}/${appName}-warn.log</file>
+    <file>../${LOG_PATH}/${appName}/${appName}-warn.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_PATH}/${appName}/${appName}-warn-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-warn-%d{yyyy-MM-dd}.log</fileNamePattern>
       <!--只保留30天-->
       <maxHistory>30</maxHistory>
       <!--1GB-->
@@ -62,9 +62,9 @@
   </appender>
 
   <appender name="FILEINFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${LOG_PATH}/${appName}/${appName}-info.log</file>
+    <file>../${LOG_PATH}/${appName}/${appName}-info.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_PATH}/${appName}/${appName}-info-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-info-%d{yyyy-MM-dd}.log</fileNamePattern>
       <!--只保留30天-->
       <maxHistory>30</maxHistory>
       <!--1GB-->
