@@ -5,9 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("com.beyondli.mapper")
-public class AspWebApplication {
+public class SapWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AspWebApplication.class, args);
+		SpringApplication.run(SapWebApplication.class, args);
 	}
 }
