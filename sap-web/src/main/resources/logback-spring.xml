@@ -5,19 +5,25 @@
   <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
 
   <contextName>logback</contextName>
-  <property name="LOG_PATH" value="asp-log" />
-  <springProperty scope="context" name="appName" source="spring.application.name" />
-  <springProperty scope="context" name="ip" source="spring.cloud.client.ipAddress" />
+  <!--spring无法获取application中的动态值-->
+  <property name="LOG_PATH" value="sap-log" />
+  <!--springProperty会获取application中的动态值-->
+  <springProperty scope="context" name="appName" source="name" />
+  <springProperty scope="context" name="ip" source="ipAddress" />
   <property name="CONSOLE_LOG_PATTERN"
             value="[%d{yyyy-MM-dd HH:mm:ss.SSS} ${ip} ${appName} %highlight(%-5level) %yellow(%X{X-B3-TraceId}),%green(%X{X-B3-SpanId}),%blue(%X{X-B3-ParentSpanId}) %yellow(%thread) %green(%logger) %msg%n"/>
 
   <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>../${LOG_PATH}/${appName}/${appName}-error.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!--只保留30天-->
+      <maxHistory>30</maxHistory>
+      <!--1GB-->
+      <totalSizeCap>1GB</totalSizeCap>
+      <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>
-      </timeBasedFileNamingAndTriggeringPolicy>
+      </timeBasedFileNamingAndTriggeringPolicy>-->
     </rollingPolicy>
     <append>true</append>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -34,10 +40,14 @@
   <appender name="FILEWARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>../${LOG_PATH}/${appName}/${appName}-warn.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-warn-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-warn-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!--只保留30天-->
+      <maxHistory>30</maxHistory>
+      <!--1GB-->
+      <totalSizeCap>1GB</totalSizeCap>
+      <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>
-      </timeBasedFileNamingAndTriggeringPolicy>
+      </timeBasedFileNamingAndTriggeringPolicy>-->
     </rollingPolicy>
     <append>true</append>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -54,10 +64,14 @@
   <appender name="FILEINFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>../${LOG_PATH}/${appName}/${appName}-info.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <fileNamePattern>../${LOG_PATH}/${appName}/${appName}-info-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!--只保留30天-->
+      <maxHistory>30</maxHistory>
+      <!--1GB-->
+      <totalSizeCap>1GB</totalSizeCap>
+      <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>
-      </timeBasedFileNamingAndTriggeringPolicy>
+      </timeBasedFileNamingAndTriggeringPolicy>-->
     </rollingPolicy>
     <append>true</append>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
